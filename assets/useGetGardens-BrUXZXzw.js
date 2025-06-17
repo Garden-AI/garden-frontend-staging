@@ -1,0 +1,1 @@
+import{i as n}from"./card-BIPsejTG.js";import{u as t}from"./useQuery-Bn9i3FfI.js";const s=async r=>{try{return(await n.get("/gardens",{params:r})).data}catch{throw new Error("Error fetching garden by DOI")}},u=r=>t({queryKey:["gardens",r],queryFn:()=>s(r)});export{u};
