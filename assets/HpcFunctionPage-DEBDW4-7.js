@@ -1,8 +1,0 @@
-import{X as F,Y as b,c as j,e as H,d as E,Z as G,r as N,j as n,L as w,N as P,P as _,Q as v,U as C,V as D,W as L}from"./index-DKHk19KX.js";import{B as U}from"./Breadcrumb-kZSC8svl.js";import{c as B,g as $}from"./ownership.utils-DONbE_Fh.js";const A=async t=>(await b.get(`/hpc/functions/${t}`)).data,I=t=>F({queryKey:["hpc-functions",parseInt(t)],queryFn:()=>A(t)}),z=()=>{var u,d;const{id:t,doi:e}=j(),{data:a,isError:l,isLoading:m}=I(t),{data:x,isLoading:g}=H(e||"",{enabled:!!e}),f=E(),s=B((d=(u=f.authorization)==null?void 0:u.user)==null?void 0:d.sub),{mutateAsync:r}=G(parseInt(t)),o=N.useCallback(async c=>{await r(c)},[r]);if(m||e&&g)return n.jsx(w,{});if(l||!a)return n.jsx(P,{});const i={...a,functionType:"hpc"},h=$(a.title,e,x),y=(c,p)=>`from garden_ai import GardenClient
-client = GardenClient()
-my_garden = client.get_garden(${p?`'${p}'`:"my_garden_doi"})
-
-# Note: HPC function execution happens via Globus Compute.
-input = ['Data Here']
-future = my_garden.${c}.submit(input, endpoint='my-globus-compute-endpoint')
-results = future.result()`;return n.jsx("div",{className:"container mb-6 max-w-7xl mx-auto px-4 md:px-6 pt-6 font-display",children:n.jsxs("div",{className:"flex flex-col lg:flex-row gap-6",children:[n.jsxs("div",{className:"lg:w-2/3",children:[n.jsx(U,{className:"mb-3",crumbs:h}),n.jsx(_,{functionData:a,functionType:"hpc",gardenDOI:e,ownsThisFunction:s,onUpdate:o}),n.jsx(v,{functionData:a,ownsThisFunction:s,onUpdate:o}),n.jsx(C,{functionData:a,ownsThisFunction:s,onUpdate:o,generateDefaultExample:y,gardenDOI:e}),n.jsx(D,{resource:i,ownsThisFunction:s})]}),n.jsx(L,{gardenFunction:i,ownsThisFunction:s})]})})};export{z as default};
